@@ -1,31 +1,30 @@
 import React, { useState, FormEvent } from 'react';
 import api from '../../services/api'
 
-import { Container, Title, Form , Ceps} from './styles';
+import { Container, Title, Form , Personagens, CenterDiv} from './styles';
 
-interface CepProps {
-    cep: string;
-    logradouro: string;
-    bairro: string;
-    localidade: string;
-    uf: string;
+interface Disney {
+    films: string;
+    name: string;
+    imageUrl: string;
+
 }
 
 const Dashboard: React.FC = () => {
 
-    const[newCep, setNewCep] = useState('');
-    const[ceps, setCep] = useState<CepProps[]>([]);
+    const[newPersonagem, setPersonagem] = useState('');
+    const[perfis, setFilme] = useState<Disney[]>([]);
     
 
-    const pesquisarcep = async (event: FormEvent<HTMLFormElement>) => {
+    const pesquisarpngm = async (event: FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
 
         try {
-            const response = await api.get(`${newCep}/json/`);
-            const cepdados = response.data;
+            const response = await api.get(`${newPersonagem}`);
+            const personagemdados = response.data;
 
-            setCep([...ceps, cepdados])
+            setFilme([...perfis, personagemdados])
         } catch (error) {
             
         }
@@ -34,30 +33,29 @@ const Dashboard: React.FC = () => {
 
     return (
         <Container>
-            <Title>Pesquise endereços por CEP</Title>
-
-            <Form onSubmit={pesquisarcep}>
+            {/* <Title>Pesquise seus filmes favoritos</Title> */}
+            <CenterDiv>
+            <Form onSubmit={pesquisarpngm}>
                 <input
-                    type="number"
-                    placeholder="Digite o CEP" 
-                    onChange={e => setNewCep(e.target.value)}
+                    type="text"
+                    placeholder="Digite o filme" 
+                    onChange={e => setPersonagem(e.target.value)}
                     />
                 <button type="submit">Pesquisar</button>
             </Form>
+            </CenterDiv>
+            <Personagens>
 
-            <Ceps>
-                {ceps.map(cep => (
+                {perfis.map(perfil => (
                     <a href="#">
-                        <p className='uf'>{cep.uf}</p>
+                        <p className='uf'>{perfil.name}</p>
                         <div>
-                            <strong>{cep.localidade}</strong>
-                            <p>{cep.logradouro}</p>
-                            <p>{cep.bairro}</p>
-                            <p>{cep.cep}</p>
+                            <strong>{perfil.films}</strong>
+                            <img src={perfil.imageUrl} alt="" />
                         </div>
                     </a>
                 ))}
-            </Ceps>
+            </Personagens>
         </Container>
     );
 };

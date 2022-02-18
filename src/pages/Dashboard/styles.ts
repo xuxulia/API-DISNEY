@@ -4,26 +4,36 @@ import { shade } from 'polished';
 export const Container = styled.div`
     width: 80%;
     margin: auto;
+
+`;
+
+export const CenterDiv = styled.div`
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
 `;
 
 export const Title = styled.h2`
     font-size: 48px;
     color: #3a3a3a;
-    max-width: 590px;
+    max-width: 800px;
     line-height: 56px;
 
-    margin-top: 80px;
+    margin-top: 40px;
 `;
+
 
 export const Form = styled.form`
     margin-top: 40px;
-    max-width: 700px;
+    max-width: 500px;
 
-    display: flex;
+    // display: flex;
 
     input {
         flex: 1;
-        height: 70px;
+        height: 50px;
         padding: 0 24px;
         border: 2px solid #fff;
         border-radius: 5px 0 0 5px;
@@ -36,9 +46,9 @@ export const Form = styled.form`
     }
 
     button {
-        width: 210px;
-        height: 70px;
-        background: #04d361;
+        width: 180px;
+        height: 50px;
+        background: #315794;
         border-radius: 0 5px 5px 0;
         border: 0;
         color: #fff;
@@ -47,18 +57,18 @@ export const Form = styled.form`
         transition: background-color 0.2s;
 
         &:hover {
-            background: ${shade(0.2, "#04d361")};
+            background: ${shade(0.2, "#395480")};
         }
     }
 `;
 
-export const Ceps = styled.div`
+export const Personagens = styled.div`
 
     margin-top: 80px;
     max-width: 700px;
 
     a{
-        background: #0f0f0f0f;
+        background: #090a0a;
         border-radius: 5px;
         width: 100%;
         display: block;

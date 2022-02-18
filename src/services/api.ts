@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://viacep.com.br/ws/',
+    baseURL: 'https://api.disneyapi.dev/characters',
 });
 
 export default api;

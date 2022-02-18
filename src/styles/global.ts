@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import genio from '../imagens/genio.png';
 
 export default createGlobalStyle`
     * {
@@ -9,7 +10,12 @@ export default createGlobalStyle`
     }
 
     body {
-        background: #f0f0f5;
+        background: #b1c5e6;
+        background-image: url(${genio});
+        background-repeat: no-repeat;
+        background-position: 97% 100px;
+
+
     }
 
     body, input, button {
