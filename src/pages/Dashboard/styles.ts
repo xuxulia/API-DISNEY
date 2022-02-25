@@ -12,24 +12,24 @@ export const CenterDiv = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
 `;
 
-export const Title = styled.h2`
-    font-size: 48px;
-    color: #3a3a3a;
-    max-width: 800px;
-    line-height: 56px;
+export const Title = styled.img`
 
-    margin-top: 40px;
+        heigth: 100px;
+        width: 300px;
+        margin: auto;
+
 `;
 
 
 export const Form = styled.form`
-    margin-top: 40px;
-    max-width: 500px;
 
-    // display: flex;
+    text-align: center;
+    margin-top: 40px;
+    // max-width: 500px;
 
     input {
         flex: 1;
@@ -64,13 +64,15 @@ export const Form = styled.form`
 
 export const Personagens = styled.div`
 
+
+    margin-left: -200px;
     margin-top: 80px;
-    max-width: 700px;
+    max-width: 600px;
 
     a{
-        background: #090a0a;
-        border-radius: 5px;
-        width: 100%;
+        background: #385d8a;
+        border-radius: 0 70px 0 70px;
+        width: 70%;
         display: block;
         padding: 24px;
         text-decoration: none;
@@ -91,23 +93,38 @@ export const Personagens = styled.div`
         }
 
         .uf{
-            width: 64px;
-            heigth: 64px;
-            border-radius: 50%;
-            background: #04d361;
-            padding: 20px;
+            font-size: 25px;
+            padding: 8px;
+            font-family: 'Patua One', cursive;
+            color: #070a52;
+            width: 150px;
+            heigth: 100px;
+            // border-radius: 10%;
+            background: #385d8a;
         }
 
         div{
             margin: 0 16px;
             flex: 1;
 
-            strong{
-                font-size: 20px;
-                color: #3d3d4d;
+            // strong{
+            //     font-family: 'Patua One', cursive;
+            //     font-size: 15px;
+            //     font-weigth: 5px;
+            //     color: #8068a1;
+            // }
+
+        img{
+            max-width: 130px;
+            max-heigth: 70px;
+            border-radius: 30%;
+            padding: 5px;
+            margin-left: 100px;
             }
-            
+
+
             p {
+                font-family: 'Patua One', cursive;
                 font-size: 18px;
                 color: #a8a8b3;
                 margin-top: 4px;

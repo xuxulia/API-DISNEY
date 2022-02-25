@@ -4,7 +4,7 @@ import api from '../../services/api'
 import { Container, Title, Form , Personagens, CenterDiv} from './styles';
 
 interface Disney {
-    films: string;
+    // films: string;
     name: string;
     imageUrl: string;
 
@@ -33,12 +33,13 @@ const Dashboard: React.FC = () => {
 
     return (
         <Container>
-            {/* <Title>Pesquise seus filmes favoritos</Title> */}
+          
             <CenterDiv>
+                <Title src="https://logodownload.org/wp-content/uploads/2017/04/disney-logo.png"/>
             <Form onSubmit={pesquisarpngm}>
                 <input
                     type="text"
-                    placeholder="Digite o filme" 
+                    placeholder="Encontre o personagem" 
                     onChange={e => setPersonagem(e.target.value)}
                     />
                 <button type="submit">Pesquisar</button>
@@ -50,7 +51,7 @@ const Dashboard: React.FC = () => {
                     <a href="#">
                         <p className='uf'>{perfil.name}</p>
                         <div>
-                            <strong>{perfil.films}</strong>
+                            {/* <strong>{perfil.films[0]}</strong> */}
                             <img src={perfil.imageUrl} alt="" />
                         </div>
                     </a>
